@@ -1,0 +1,1 @@
+/home/mshallom/Documents/WorkSpaces/Rust-Programming-Learning/crates/target/debug/crates: /home/mshallom/Documents/WorkSpaces/Rust-Programming-Learning/crates/src/lib.rs /home/mshallom/Documents/WorkSpaces/Rust-Programming-Learning/crates/src/main.rs
