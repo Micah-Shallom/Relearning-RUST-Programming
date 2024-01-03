@@ -1,3 +1,11 @@
+mod strings;
+mod vector;
+mod hashmap;
+
+// three important rust collections are vector, string and hashmap
+
 fn main() {
-    println!("Hello, world!");
+    vector::vectorfn();
+    strings::stringfn();
+    hashmap::hashmapfn();
 }
