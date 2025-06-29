@@ -1,0 +1,1 @@
+/home/stonepillar/Documents/Workspace/Relearning-RUST-Programming/bitcoin-rust/transaction-decoder/target/debug/transaction-decoder: /home/stonepillar/Documents/Workspace/Relearning-RUST-Programming/bitcoin-rust/transaction-decoder/src/main.rs
