@@ -11,7 +11,7 @@ pub fn module_main() {
     println!("Number of inputs: {}", num_inputs);
 }
 
-fn read_compact_size(input: &mut &[u8]) -> io::Result<u64> {
+pub fn read_compact_size(input: &mut &[u8]) -> io::Result<u64> {
     if input.is_empty() {
         return Err(io::Error::new(io::ErrorKind::UnexpectedEof, "short read"));
     }
