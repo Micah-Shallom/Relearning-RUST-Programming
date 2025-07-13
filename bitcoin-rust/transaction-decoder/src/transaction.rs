@@ -7,11 +7,20 @@ pub fn module_main() {
         Ok(mut transaction_bytes) => {
             let mut bytes_slice = transaction_bytes.as_slice();
 
-            println!("bytes slice memory address before calling read_version: {:p}\n", bytes_slice);
+            println!(
+                "bytes slice memory address before calling read_version: {:p}\n",
+                bytes_slice
+            );
 
-            let version = read_version(&mut bytes_slice);
-            println!("bytes slice memory address after calling read_version: {:p}\n", bytes_slice);
-            println!("bytes slice after calling read_version: {:?}\n", bytes_slice);
+            let version = read_u32(&mut bytes_slice);
+            println!(
+                "bytes slice memory address after calling read_version: {:p}\n",
+                bytes_slice
+            );
+            println!(
+                "bytes slice after calling read_version: {:?}\n",
+                bytes_slice
+            );
             println!("Version: {}", version);
 
             let mut input_count = [0; 1];
@@ -22,13 +31,19 @@ pub fn module_main() {
     }
 }
 
-pub fn read_version(transaction_bytes: &mut &[u8]) -> u32 {
-    println!("transaction_bytes memory address before reading {:p}", *transaction_bytes);
+pub fn read_u32(transaction_bytes: &mut &[u8]) -> u32 {
+    // println!(
+    //     "transaction_bytes memory address before reading {:p}",
+    //     *transaction_bytes
+    // );
 
     let mut buffer = [0; 4];
     transaction_bytes.read(&mut buffer).unwrap();
 
-    println!("transaction bytes memory address after reading {:p}\n", *transaction_bytes);
-    println!("transaction bytes: {:?}\n", transaction_bytes);
+    // println!(
+    //     "transaction bytes memory address after reading {:p}\n",
+    //     *transaction_bytes
+    // );
+    // println!("transaction bytes: {:?}\n", transaction_bytes);
     u32::from_le_bytes(buffer)
 }
